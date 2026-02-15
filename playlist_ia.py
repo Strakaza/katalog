@@ -1,5 +1,5 @@
 from flask import Flask, render_template_string, request, jsonify
-import subprocess
+from yt_dlp import YoutubeDL 
 import threading
 import json
 import os
@@ -20,8 +20,23 @@ def capture_logs_playlist(url):
     
     try:
         log_storage.append(f"> ANALYSE DE LA PLAYLIST...")
-        cmd_list = ["yt-dlp", "--get-id", "--flat-playlist", url]
-        video_ids = subprocess.check_output(cmd_list).decode().splitlines()
+        
+        ydl_opts = {
+            'extract_flat': True, # Récupère juste les infos sans télécharger
+            'quiet': True,
+            'ignoreerrors': True,
+        }
+        
+        video_ids = []
+        with YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(url, download=False)
+            
+            if 'entries' in info:
+                # C'est une playlist
+                video_ids = [entry['id'] for entry in info['entries'] if entry]
+            elif 'id' in info:
+                # C'est une vidéo unique
+                video_ids = [info['id']]
         
         progress["total"] = len(video_ids)
         log_storage.append(f"> {progress['total']} ÉLÉMENTS DÉTECTÉS. LANCEMENT DU BATCH IA.")
@@ -34,6 +49,7 @@ def capture_logs_playlist(url):
             log_storage.append(f"> ENVOI À L'IA : {v_id}")
             
             try:
+                # Appel au service IA (ia_processor.py)
                 response = requests.get(f"http://localhost:5006/add?url={v_url}", timeout=600)
                 if response.status_code == 200:
                     log_storage.append(f"> SUCCÈS : FICHE NOTION CRÉÉE.")
