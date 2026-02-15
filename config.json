@@ -1,0 +1,15 @@
+{
+    "provider": "openrouter",
+    "notion": {
+        "token": "NOTION_TOKEN",
+        "database_id": "database_id"
+    },
+    "openrouter": {
+        "api_key": "OPENROUTEUR_API_TOKEN",
+        "model": "arcee-ai/trinity-large-preview:free"
+    },
+    "ollama": {
+        "url": "http://localhost:11434/api/generate",
+        "model": "qwen3:1.7b"
+    }
+}
