@@ -127,12 +127,3 @@ Le serveur va démarrer et afficher qu'il écoute sur le port 5006. Laissez cett
     *   L'IA va générer le résumé.
     *   Le résultat sera envoyé sur Notion.
 5.  Une notification vous confirmera que la fiche a été créée.
-
----
-
-## Dépannage
-
-*   **Erreur lors de l'installation des dépendances** : Vérifiez que Python est bien installé et ajouté au PATH. Essayez `pip3` au lieu de `pip`.
-*   **Ollama ne répond pas** : Vérifiez que l'application Ollama est bien lancée en arrière-plan.
-*   **Rien n'arrive dans Notion** : Vérifiez que l'intégration a bien été connectée à votre base de données (voir section Configuration Notion).
-*   **Erreur OpenRouter** : Vérifiez que vous avez du crédit (si modèle payant) ou que votre clé API est valide.
