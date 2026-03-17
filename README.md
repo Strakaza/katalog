@@ -42,7 +42,7 @@ Ouvrez le fichier `config.json` avec un éditeur de texte (Bloc-notes, VS Code, 
 
 ### 1. Notion
 
-**Conseil :** Pour vous faciliter la tâche, vous pouvez dupliquer ce modèle Notion qui contient déjà toutes les propriétés nécessaires : [Lien vers le template](https://strakaza.notion.site/305ac440c2c08012b711dbb4e27b13f9?v=305ac440c2c0808b90a6000c74d5662f)
+**Conseil :** Pour vous faciliter la tâche, vous pouvez dupliquer ce modèle Notion qui contient déjà toutes les propriétés nécessaires : [Lien vers le template](https://strakaza.notion.site/ab8ac440c2c0828cb4af815838e5a9cf?v=22fac440c2c082b8b3d88896e09c9074)
 
 Pour que le script puisse écrire dans votre Notion, il faut deux éléments :
 1.  **Token d'intégration** : Créez une nouvelle intégration sur [Notion Developers](https://www.notion.so/my-integrations). Copiez le "Internal Integration Secret".
