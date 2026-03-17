@@ -20,7 +20,7 @@ Avant de commencer, assurez-vous d'avoir installé les logiciels suivants sur vo
 Si vous avez Git, ouvrez un terminal et tapez :
 ```bash
 git clone <URL_DU_DEPOT>
-cd "katalog"
+cd "katalog-main"
 ```
 Sinon, téléchargez le fichier ZIP depuis GitHub, extrayez-le et ouvrez le dossier dossier extrait.
 
